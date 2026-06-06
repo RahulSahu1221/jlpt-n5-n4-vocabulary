@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JLPT N5-N4 Vocabulary Trainer</title>
+
+    <link rel="icon" type="image/jpeg" href="data/assets/logo.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     HEADER
+════════════════════════════════════════ -->
+<header>
+
+    <h1 class="app-title">
+        <img src="data/assets/logo.jpg" alt="Logo" class="app-logo">
+        JLPT N5-N4 Vocabulary Trainer
+    </h1>
+
+    <div class="controls">
+
+        <select id="lessonSelect"></select>
+
+        <input
+            type="text"
+            id="searchBox"
+            placeholder="Search kanji, hiragana or meaning…"
+        >
+
+        <button id="vocabBtn">📖 Vocab</button>
+        <button id="flashcardBtn">🃏 Cards</button>
+        <button id="quizBtn">⚡ Quiz</button>
+        <button id="favBtn">⭐ Favorites</button>
+        <button id="themeToggleBtn">☀️ Light</button>
+
+    </div>
+
+</header>
+
+<!-- ═══════════════════════════════════════
+     MAIN CONTAINER
+════════════════════════════════════════ -->
+<div class="container">
+
+    <div class="lesson-title" id="lessonTitle">Lesson 1</div>
+
+    <div class="progress">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- ── Vocabulary View ── -->
+    <div id="vocabularyView">
+        <div class="cards" id="vocabularyContainer"></div>
+    </div>
+
+    <!-- ── Flashcard View ── -->
+    <div id="flashcardView" class="hidden">
+
+        <div class="flashcard" id="flashcard">
+            <div class="flashcard-inner">
+                <div class="flash-face front-face" id="flashFront">
+                    Loading…
+                </div>
+                <div class="flash-face back-face" id="flashBack">
+                    Loading…
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard-navigation">
+            <button id="prevBtn" class="nav-btn">&#8592; Prev</button>
+            <span id="cardCounter">1 / 1</span>
+            <button id="nextBtn" class="nav-btn">Next &#8594;</button>
+        </div>
+
+    </div>
+
+    <!-- ── Quiz View ── -->
+    <div id="quizView" class="hidden">
+
+        <div class="quiz-box">
+
+            <!-- Mode toggle -->
+            <div class="quiz-mode-toggle">
+                <button id="modeKanjiBtn" class="mode-btn active-mode">Kanji → Meaning</button>
+                <button id="modeMeaningBtn" class="mode-btn">Meaning → Kanji</button>
+            </div>
+
+            <!-- Stats -->
+            <div class="quiz-stats">
+                <span id="scoreDisplay">&#9733; Score: 0</span>
+                <span id="streakDisplay">&#128293; Streak: 0</span>
+                <span id="bestStreakDisplay">&#127942; Best: 0</span>
+            </div>
+
+            <!-- Progress -->
+            <div class="quiz-progress">
+                <div id="quizProgressFill"></div>
+            </div>
+
+            <p id="quizCounter">Question 1 / 20</p>
+
+            <!-- Question -->
+            <div class="quiz-question-box">
+                <h2 id="quizQuestion">Loading…</h2>
+                <button id="quizSpeakBtn">&#128266;</button>
+            </div>
+
+            <!-- Options -->
+            <button class="quiz-option" id="optionA"></button>
+            <button class="quiz-option" id="optionB"></button>
+            <button class="quiz-option" id="optionC"></button>
+            <button class="quiz-option" id="optionD"></button>
+
+            <p id="quizResult" style="margin-top:20px;text-align:center;font-size:17px;"></p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ── Footer ── -->
+<footer>JLPT N5-N4 Vocabulary Trainer &nbsp;·&nbsp; Lessons 1–50</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>
